@@ -1,15 +1,12 @@
 <template>
-    <div id="App">
+    <div>
 
     </div>
 </template>
 
 <script>
     export default {
-        methods: {},
-        mounted() {
-            console.error('asd')
-        }
+
     }
 </script>
 

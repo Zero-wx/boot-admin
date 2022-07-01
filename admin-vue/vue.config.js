@@ -1,8 +1,17 @@
 const {defineConfig} = require('@vue/cli-service')
+
+// If your port is set to 80,
+// use administrator privileges to execute the command line.
+// For example, Mac: sudo npm run
+// You can change the port by the following method:
+// port = 9527 npm run dev OR npm run dev --port = 9527
+const port = process.env.port || process.env.npm_config_port || 3000 // dev port
+
+
 module.exports = defineConfig({
     transpileDependencies: true,
     devServer: {
-        port: 3000,
+        port: port,
     },
 
     // webpack 相关操作
