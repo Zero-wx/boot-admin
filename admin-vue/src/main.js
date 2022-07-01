@@ -2,8 +2,8 @@ import {createApp} from 'vue'
 import App from './App.vue'
 
 
-import pinia from "@/store/idnex";
-import router from './router/index'
+import pinia from "@/store";
+import router from '@/router'
 
 
 import '@/styles/global.scss' // 全局Css
