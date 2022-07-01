@@ -8,6 +8,7 @@ import router from '@/router'
 
 import '@/styles/global.scss' // 全局Css
 
+import '@/permission'
 
 createApp(App).use(router)
     .use(pinia)

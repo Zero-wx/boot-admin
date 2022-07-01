@@ -12,7 +12,8 @@ const routes = [
         children: [
             {
                 path: 'dashboard',
-                component: () => import('@/views/dashboard/index'),
+                name: 'dashboard',
+                component: () => import(/* webpackChunkName: "group-user" */'@/views/dashboard/index'),
             }
         ]
 
