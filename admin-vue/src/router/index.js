@@ -15,20 +15,20 @@ const routes = [
                 component: () => import('@/views/dashboard/index'),
             }
         ]
-        // children: [{
-        //     path: 'dashboard',
-        //     name: 'dashboard',
-        //     // component: () => import('@/views/dashboard/index'),
-        //     component: () => import('@/views/login/index')
-        // }]
+
     },
-    // {
-    //     path: '/login',
-    //     name: 'login',
-    //     meta: {title: 'login'},
-    //     component: () => import('@/views/login/index'),
-    //     hidden: true
-    // },
+    {
+        path: '/login',
+        name: 'login',
+        meta: {title: 'login'},
+        component: () => import('@/views/login/index'),
+        hidden: true
+    },
+    {
+        path: '/404',
+        component: () => import('@/views/404'),
+        hidden: true
+    },
 ]
 
 const router = createRouter({
