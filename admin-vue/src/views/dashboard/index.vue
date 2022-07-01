@@ -1,13 +1,13 @@
 <template>
-    <div>
-        首页
-    </div>
+   <div class="clearfix">
+       首页
+   </div>
 </template>
 
 <script>
     export default {}
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 
 </style>
