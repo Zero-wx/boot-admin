@@ -9,7 +9,7 @@ router.beforeEach(async (to, from, next) => {
     const hasToken = false;
     const store = Stores()
 
-    console.log(store, '用户的store')
+    console.log(store, '用户的store',231)
 
     if (hasToken) {
 
