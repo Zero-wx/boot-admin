@@ -1,12 +1,15 @@
 // 权限
 import router from '@/router'
-import store from '@/store'
+import Stores from '@/store';
+
 
 const whiteList = ['/login'] // 路由白名单
-
 router.beforeEach(async (to, from, next) => {
 
     const hasToken = false;
+    const store = Stores()
+
+    console.log(store, '用户的store')
 
     if (hasToken) {
 
@@ -25,3 +28,9 @@ router.afterEach(() => {
     // finish progress bar
     // NProgress.done()
 })
+
+
+
+
+
+
