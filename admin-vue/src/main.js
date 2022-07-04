@@ -1,15 +1,19 @@
 import {createApp} from 'vue'
 import App from './App.vue'
 
+import {createPinia} from 'pinia';
+const app = createApp(App);
 
-import pinia from "@/store";
-import router from '@/router'
-
+//
 
 import '@/styles/global.scss' // 全局Css
+import router from '@/router' // 路由
+import '@/permission' // 权限
 
-import '@/permission'
 
-createApp(App).use(router)
-    .use(pinia)
-    .mount('#app')
+app.use(createPinia()).use(router).mount('#app')
+
+
+//
+// createApp(App).use(createPinia()).use(router).mount('#app')
+// createApp(App).use(createPinia()).use(router).mount('#app')
