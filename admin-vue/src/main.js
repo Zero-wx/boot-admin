@@ -7,11 +7,16 @@ const app = createApp(App);
 //
 
 import '@/styles/global.scss' // 全局Css
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+
 import router from '@/router' // 路由
 import '@/permission' // 权限
 
 
-app.use(createPinia()).use(router).mount('#app')
+
+
+app.use(router).use(createPinia()).use(ElementPlus).mount('#app')
 
 
 //
