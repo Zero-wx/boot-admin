@@ -2,6 +2,7 @@ import {createApp} from 'vue'
 import App from './App.vue'
 
 import {createPinia} from 'pinia';
+
 const app = createApp(App);
 
 //
@@ -14,7 +15,10 @@ import router from '@/router' // 路由
 import '@/permission' // 权限
 
 
-
+import * as ElIconModules from '@element-plus/icons-vue';
+for (let iconName in ElIconModules) {
+    app.component(iconName, ElIconModules[iconName])
+}
 
 app.use(router).use(createPinia()).use(ElementPlus).mount('#app')
 

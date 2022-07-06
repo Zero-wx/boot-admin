@@ -7,12 +7,14 @@ const service = axios.create({
 
 // 请求前
 service.interceptors.request.use(config => {
+    console.log('请求前')
+    console.log(config)
 
 })
 
 // 响应后
 service.interceptors.response.use(config => {
-
+    console.log('请求后')
 })
 
 
