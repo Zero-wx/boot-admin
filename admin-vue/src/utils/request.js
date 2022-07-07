@@ -10,10 +10,17 @@ service.interceptors.request.use(config => {
     console.log('请求前')
     console.log(config)
 
+    const token = true
 
+    if (token) {
+        config.headers['X-Token'] = 'token12123132'
+    }
 
+    return config;
 
-
+}, error => {
+    console.log(error, '错误') // for debug
+    return Promise.reject(error)
 })
 
 // 响应后

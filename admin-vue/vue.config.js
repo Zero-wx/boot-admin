@@ -6,12 +6,29 @@ const {defineConfig} = require('@vue/cli-service')
 // You can change the port by the following method:
 // port = 9527 npm run dev OR npm run dev --port = 9527
 const port = process.env.port || process.env.npm_config_port || 3000 // dev port
-
+const host = "localhost"
 
 module.exports = defineConfig({
     transpileDependencies: true,
     devServer: {
+        host: host,
         port: port,
+        open: true,
+        proxy: {
+            [process.env.VUE_APP_BASE_API]: {
+                target: `http://localhost:8080`,
+                changeOrigin: true,
+            }
+        },
+        // proxy: {
+        //     [process.env.VUE_APP_BASE_API]: {
+        //         target: `http://localhost:8080`,
+        //         changeOrigin: true,
+        //         pathRewrite: {
+        //             ['^' + process.env.VUE_APP_BASE_API]: ''
+        //         }
+        //     }
+        // }
     },
 
     // webpack 相关操作
