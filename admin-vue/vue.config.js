@@ -13,13 +13,13 @@ module.exports = defineConfig({
     devServer: {
         host: host,
         port: port,
-        open: true,
-        proxy: {
-            [process.env.VUE_APP_BASE_API]: {
-                target: `http://localhost:8080`,
-                changeOrigin: true,
-            }
-        },
+        // open: true,
+        // proxy: {
+        //     [process.env.VUE_APP_BASE_API]: {
+        //         target: `http://localhost:8080`,
+        //         changeOrigin: true,
+        //     }
+        // },
         // proxy: {
         //     [process.env.VUE_APP_BASE_API]: {
         //         target: `http://localhost:8080`,
