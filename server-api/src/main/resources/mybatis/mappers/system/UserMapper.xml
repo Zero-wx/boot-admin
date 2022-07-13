@@ -1,0 +1,30 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zero.serverApi.mapper.system.UserMapper">
+    <!-- 增加一条记录 -->
+    <insert id="insertUser">
+        INSERT INTO t_account
+        VALUES (#{id}, #{userName}, #{passWord}, #{pid});
+    </insert>
+    <!-- 删除一条记录 -->
+    <delete id="deleteUser">
+        DELETE
+        FROM t_account
+        where id = #{id};
+    </delete>
+    <!-- 更新 -->
+    <update id="updateUser">
+        UPDATE t_account
+        SET username = #{userName},
+            password = #{passWord},
+            pid      = #{pid}
+        WHERE id = #{id}
+    </update>
+    <!-- 查询 -->
+    <select id="selectUser" resultType="com.zero.serverApi.entity.system.User">
+        SELECT *
+        FROM t_account;
+    </select>
+</mapper>

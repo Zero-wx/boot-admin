@@ -12,7 +12,7 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 @SpringBootApplication
-@MapperScan("com.zero.serverApi.dao")
+//@MapperScan("com.zero.serverApi.mapper")
 public class ServerApiApplication {
 
 
@@ -29,7 +29,7 @@ public class ServerApiApplication {
         String path = env.getProperty("server.servlet.context-path");
         path = path == null ? "" : path;
         logger.info("\n----------------------------------------------------------\n\t" +
-                "web-flash is running! \n\t" +
+                "Tset-Admin is running! \n\t" +
                 "系统运行环境 : \t" + active + "\n\t" +
                 "本地访问地址 : \thttp://localhost:" + port + path + "/\n\t" +
                 "外部访问地址 : \thttp://" + ip + ":" + port + path + "/\n\t" +
