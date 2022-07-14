@@ -1,7 +1,5 @@
 package com.zero.serverApi.service;
 
-import com.zero.serverApi.entity.system.User;
-
 import java.util.List;
 
 public interface CURDService<T, ID> {
@@ -24,7 +22,7 @@ public interface CURDService<T, ID> {
      *
      * @return
      */
-    List<User> select();
+    List<T> select();
 
     /**
      * 更新

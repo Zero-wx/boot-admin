@@ -1,8 +1,11 @@
 package com.zero.serverApi.contorller;
 
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import com.zero.serverApi.entity.system.User;
 import com.zero.serverApi.service.system.UserService;
-import com.zero.serverApi.utils.result.Results;
+import com.zero.serverApi.utils.pages.PageBean;
 import com.zero.serverApi.utils.result.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -10,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -40,7 +44,7 @@ public class AccountController {
      * @return
      */
     @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
-    public Results deleteUser(@RequestBody Map<Object, Integer> params) {
+    public Object deleteUser(@RequestBody Map<Object, Integer> params) {
         int delete = userService.delete(params.get("id"));
         return Result.success(delete);
     }
@@ -49,7 +53,7 @@ public class AccountController {
      * 修改信息
      */
     @RequestMapping(value = "/update", method = RequestMethod.POST)
-    public Results upDataUser(@RequestBody Map<Object, Object> params) {
+    public Object upDataUser(@RequestBody Map<Object, Object> params) {
         int update = userService.update(params);
         return Result.success(update);
     }
@@ -61,10 +65,14 @@ public class AccountController {
      * @return
      */
     @RequestMapping(value = "/userList", method = RequestMethod.GET)
-    public Results getUserList() {
-        Object userList = userService.select();
+    public Object getUserList() {
+        PageHelper.startPage(1, 3);
+        List<User> userList = userService.select();
+        PageBean<User> userPageInfo = new PageBean<>(userList);
 
-        return Result.success(userList);
+        System.out.println(userList);
+
+        return Result.success(userPageInfo);
     }
 
 

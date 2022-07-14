@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class UserService<T> implements CURDService {
+public class UserService implements CURDService {
 
     @Autowired
     private UserMapper userMapper;
@@ -32,7 +32,7 @@ public class UserService<T> implements CURDService {
     }
 
     @Override
-    public List select() {
+    public List<User> select() {
         return userMapper.selectUser();
     }
 

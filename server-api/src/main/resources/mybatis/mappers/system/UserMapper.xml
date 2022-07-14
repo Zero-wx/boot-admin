@@ -25,6 +25,6 @@
     <!-- 查询 -->
     <select id="selectUser" resultType="com.zero.serverApi.entity.system.User">
         SELECT *
-        FROM t_account;
+        FROM t_account
     </select>
 </mapper>
