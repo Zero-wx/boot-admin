@@ -33,6 +33,7 @@ public class UserService implements CURDService {
 
     @Override
     public List<User> select() {
+
         return userMapper.selectUser();
     }
 
