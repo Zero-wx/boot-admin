@@ -1,7 +1,7 @@
 package com.zero.serverApi.service.system;
 
 
-import com.zero.serverApi.entity.system.User;
+import com.zero.serverApi.bean.entity.system.User;
 import com.zero.serverApi.mapper.system.UserMapper;
 import com.zero.serverApi.service.CURDService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,8 +31,17 @@ public class UserService implements CURDService {
         return userMapper.deleteUser(id);
     }
 
+
     @Override
     public List<User> select() {
+
+
+//        PageHelper.startPage(2, 3);
+//        List<User> userList = userService.select();
+//        PageBean<User> userPageInfo = new PageBean<>(userList);
+//
+//        System.out.println(userList);
+
 
         return userMapper.selectUser();
     }
@@ -43,4 +52,7 @@ public class UserService implements CURDService {
     }
 
 
+    public User findByAccount(String userName) {
+        return userMapper.selectUser(userName);
+    }
 }

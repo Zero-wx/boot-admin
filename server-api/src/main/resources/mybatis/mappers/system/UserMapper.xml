@@ -6,7 +6,7 @@
     <!-- 增加一条记录 -->
     <insert id="insertUser">
         INSERT INTO t_account
-        VALUES (#{id}, #{userName}, #{passWord}, #{pid});
+        VALUES (null, #{userName}, #{passWord}, #{name}, #{pid});
     </insert>
     <!-- 删除一条记录 -->
     <delete id="deleteUser">
@@ -23,8 +23,9 @@
         WHERE id = #{id}
     </update>
     <!-- 查询 -->
-    <select id="selectUser" resultType="com.zero.serverApi.entity.system.User">
+    <select id="selectUser" resultType="com.zero.serverApi.bean.entity.system.User">
         SELECT *
         FROM t_account
+        where username = #{userName}
     </select>
 </mapper>

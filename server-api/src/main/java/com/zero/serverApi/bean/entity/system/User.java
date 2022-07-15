@@ -1,4 +1,4 @@
-package com.zero.serverApi.entity.system;
+package com.zero.serverApi.bean.entity.system;
 
 import lombok.Data;
 
@@ -7,5 +7,6 @@ public class User {
     private Integer id;
     private String userName;
     private String passWord;
+    private String name;
     private Integer pid;
 }

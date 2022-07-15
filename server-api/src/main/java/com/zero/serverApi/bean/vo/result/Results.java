@@ -1,4 +1,4 @@
-package com.zero.serverApi.utils.result;
+package com.zero.serverApi.bean.vo.result;
 
 import lombok.Getter;
 import lombok.Setter;

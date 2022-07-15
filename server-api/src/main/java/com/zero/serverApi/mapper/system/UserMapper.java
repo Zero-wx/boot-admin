@@ -1,6 +1,6 @@
 package com.zero.serverApi.mapper.system;
 
-import com.zero.serverApi.entity.system.User;
+import com.zero.serverApi.bean.entity.system.User;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -11,8 +11,11 @@ public interface UserMapper {
 
     int deleteUser(int id);
 
-    List<User> selectUser();
+    User selectUser(Object params);
 
+
+    List<User> selectUser();
     int updateUser(Object params);
+
 
 }

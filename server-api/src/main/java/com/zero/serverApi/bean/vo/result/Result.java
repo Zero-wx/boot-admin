@@ -1,4 +1,4 @@
-package com.zero.serverApi.utils.result;
+package com.zero.serverApi.bean.vo.result;
 
 public class Result {
     public static final Integer SUCCESS = 2000;
@@ -9,5 +9,7 @@ public class Result {
         return new Results(Result.SUCCESS, "成功", data);
     }
 
-
+    public static Results failure(String msg) {
+        return new Results(Result.FAILURE, msg, null);
+    }
 }
