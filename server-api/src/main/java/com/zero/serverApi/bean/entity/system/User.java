@@ -9,4 +9,5 @@ public class User {
     private String passWord;
     private String name;
     private Integer pid;
+    private String Salt;
 }

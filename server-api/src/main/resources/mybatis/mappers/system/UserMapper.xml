@@ -6,7 +6,7 @@
     <!-- 增加一条记录 -->
     <insert id="insertUser">
         INSERT INTO t_account
-        VALUES (null, #{userName}, #{passWord}, #{name}, #{pid});
+        VALUES (null, #{userName}, #{passWord}, #{name}, #{pid}, #{Salt});
     </insert>
     <!-- 删除一条记录 -->
     <delete id="deleteUser">

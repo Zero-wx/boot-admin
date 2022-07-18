@@ -7,6 +7,8 @@ import com.zero.serverApi.bean.exception.BizExceptionEnum;
 import com.zero.serverApi.service.system.UserService;
 import com.zero.serverApi.bean.vo.result.Result;
 
+import com.zero.serverApi.utils.MD5;
+import com.zero.serverApi.utils.RandomUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,13 +34,22 @@ public class AccountController {
      * @return 注册成功信息
      */
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public Object register(@RequestBody User params) {
+    public void register(@RequestBody User params) {
         User Account = userService.findByAccount(params.getUserName());
         if (Account != null) {
             throw new ApplicationException(BizExceptionEnum.USER_ALREADY_REG);
         } else {
+
+
+            params.setSalt(RandomUtil.getRandomString(5));
+            params.setPassWord(MD5.md5(params.getPassWord(),params.getSalt()));
+            System.out.println(params);
+
             int insert = userService.insert(params);
-            return Result.success(insert);
+
+
+            System.out.println(insert);
+//            return Result.success(insert);
         }
 
     }
