@@ -22,3 +22,8 @@ pagehelper:
   reasonable: true
   support-methods-arguments: true
   params: count=countSql
+
+jwt:
+  token:
+    expire:
+      time: 30
