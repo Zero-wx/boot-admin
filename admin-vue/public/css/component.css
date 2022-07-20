@@ -86,3 +86,7 @@
 	-webkit-transition: opacity 0.3s;
 	transition: opacity 0.3s;
 }
+
+.swal-overlay {
+	background-color: rgba(43, 165, 137, 0.45);
+}
