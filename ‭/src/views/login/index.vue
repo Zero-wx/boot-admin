@@ -1,11 +1,11 @@
 <template>
-    <div class="login-container show">
-        <router-link to="dashboard">/dashboard</router-link>
-
-        <div @click="clear">测试</div>
-
+    <div class="login-container">
+        <div class="content">
+            <div class="title">
+                <p>xxx测试管理后台</p>
+            </div>
+        </div>
     </div>
-
 </template>
 
 <script setup>
@@ -22,6 +22,8 @@ function clear() {
 <style scoped>
 .login-container {
     height: 100%;
+    background-color: #7e8c8d;
+    border: 1px solid red;
 }
 
 </style>
