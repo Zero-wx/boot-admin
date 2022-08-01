@@ -25,6 +25,7 @@
             </el-form-item>
             <el-button type="primary" class="login-btn">登录</el-button>
           </el-form>
+<!--          <el-button type="primary" class="login-btn">登录</el-button>-->
         </div>
       </div>
     </div>

@@ -7,10 +7,9 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
-    "axios": "^0.27.2",
     "core-js": "^3.8.3",
-    "element-plus": "^2.2.10",
-    "vue": "^3.2.27",
+    "element-plus": "^2.2.12",
+    "vue": "^3.2.13",
     "vue-router": "^4.0.3"
   },
   "devDependencies": {
@@ -19,14 +18,7 @@
     "@vue/cli-service": "~5.0.0",
     "sass": "^1.32.7",
     "sass-loader": "^12.0.0",
-    "unplugin-auto-import": "^0.10.1",
-    "unplugin-vue-components": "^0.21.2",
-    "webpack-bundle-analyzer": "^4.5.0"
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead",
-    "not ie 11"
-  ]
+    "unplugin-auto-import": "^0.10.3",
+    "unplugin-vue-components": "^0.21.2"
+  }
 }
