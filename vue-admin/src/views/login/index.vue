@@ -14,18 +14,17 @@
           </div>
           <el-form class="el_form">
             <el-form-item>
-              <p>账号</p>
-              <el-input type="userName" @focus="inputFocus(0)"/>
-              <div class="border" :class="inputFocusCss.active===0?'hide_border':''"></div>
+              <el-input type="passWord"></el-input>
+              <label>账号</label>
+              <div class="bar"></div>
             </el-form-item>
             <el-form-item>
-              <p>密码</p>
-              <el-input type="passWord" @focus="inputFocus(1)"/>
-              <div class="border" :class="inputFocusCss.active===1 ?'hide_border':''"></div>
+              <el-input type="passWord"  :prefix-icon="Search"></el-input>
+              <label>密码</label>
+              <div class="bar"></div>
             </el-form-item>
             <el-button type="primary" class="login-btn">登录</el-button>
           </el-form>
-<!--          <el-button type="primary" class="login-btn">登录</el-button>-->
         </div>
       </div>
     </div>
@@ -34,15 +33,6 @@
 
 <script setup>
 import {reactive} from "vue";
-// 输入框样式
-const inputFocusCss = reactive({
-  active: -1
-})
-
-
-function inputFocus(val) {
-  inputFocusCss.active = val
-}
 
 
 </script>
@@ -113,26 +103,10 @@ function inputFocus(val) {
         }
 
 
-        .el_form {
-          .border {
-            width: 100%;
-            height: 2px;
-            background: #2b4b62bf;
-            transition: 0.2s all;
-            transform: scale(0, 1);
-          }
-
-          .hide_border {
-            transform: none;
-          }
-
-
-        }
-
-
         :deep(.el_form) {
+
           .el-form-item {
-            margin-bottom: 0;
+            margin-bottom: 25px;
 
             p {
               font-size: 1rem;
@@ -152,7 +126,42 @@ function inputFocus(val) {
             .el-input__inner {
               border-color: transparent;
               font-size: 1.2rem;
+              margin-top: 15px;
+
+              &:focus {
+
+              }
             }
+
+
+          }
+
+
+          .el-form-item__content:focus-within {
+            label {
+              transform: translate(-12%, -50%) scale(0.75);
+            }
+
+            .bar {
+              transform: none;
+            }
+          }
+
+          label {
+            position: absolute;
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #0f2c3f;
+            transition: 0.3s ease;
+          }
+
+          .bar {
+            width: 100%;
+            height: 2px;
+            background: #2464a5;
+            transition: 0.3s ease;
+            transform: scale(0, 1);
+            //transform: translate(-12%, -50%) scale(1);
           }
         }
 
@@ -162,12 +171,8 @@ function inputFocus(val) {
           height: 40px;
           font-size: 1.11rem;
         }
-
       }
     }
-
   }
-
-
 }
 </style>
