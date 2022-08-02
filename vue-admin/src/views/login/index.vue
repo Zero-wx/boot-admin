@@ -12,18 +12,18 @@
           <div class="form-title">
             <p>欢迎回来</p>
           </div>
-          <el-form class="el_form">
+          <el-form class="el_form" :model="loginForm">
             <el-form-item>
-              <el-input type="passWord"></el-input>
+              <el-input type="text" v-model="loginForm.userName"></el-input>
               <label>账号</label>
               <div class="bar"></div>
             </el-form-item>
             <el-form-item>
-              <el-input type="passWord"  :prefix-icon="Search"></el-input>
+              <el-input type="passWord" v-model="loginForm.passWord"></el-input>
               <label>密码</label>
               <div class="bar"></div>
             </el-form-item>
-            <el-button type="primary" class="login-btn">登录</el-button>
+            <el-button type="primary" class="login-btn" @click="login">登录</el-button>
           </el-form>
         </div>
       </div>
@@ -33,6 +33,15 @@
 
 <script setup>
 import {reactive} from "vue";
+
+const loginForm = reactive({
+  userName: '',
+  passWord: ''
+})
+
+function login() {
+  console.log('登录', loginForm.passWord)
+}
 
 
 </script>
@@ -149,6 +158,8 @@ import {reactive} from "vue";
 
           label {
             position: absolute;
+            top: 0;
+            left: 0;
             font-size: 1.2rem;
             font-weight: 400;
             color: #0f2c3f;
