@@ -32,7 +32,12 @@
 </template>
 
 <script setup>
-import {reactive} from "vue";
+import { onMounted, reactive } from "vue";
+
+import piniaStore from '@/store'
+import router from "@/router";
+
+const {userPiniaStore} = piniaStore()
 
 const loginForm = reactive({
   userName: '',
@@ -40,7 +45,21 @@ const loginForm = reactive({
 })
 
 function login() {
-  console.log('登录', loginForm.passWord)
+
+  // const {UserPinia} = Pinia();
+
+  userPiniaStore.accountLogin({userName: loginForm.userName, passWord: loginForm.passWord}).then(res => {
+
+
+    router.push({path: "/"})
+
+  }).catch(err => {
+    console.log(err, '登录错误')
+  })
+
+  // UserPinia.accountLogin({username: loginForm.userName, passWord: loginForm.passWord}).then(res => {
+  //
+  // })
 }
 
 

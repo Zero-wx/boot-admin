@@ -1,6 +1,7 @@
 <template>
-  <div>
-    layout
+  <div style="color: red">
+   
+    <router-view></router-view>
   </div>
 </template>
 
