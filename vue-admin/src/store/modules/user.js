@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 
-import { login } from "@/api/user";
+import { login, userInfo } from "@/api/user";
 import { getToken, setToken } from "@/utils/auth";
 
 const userPiniaStore = defineStore({
@@ -19,6 +19,19 @@ const userPiniaStore = defineStore({
                     const {token} = res.data
                     setToken(token)
                     resolve(res)
+                }).catch(err => {
+                    reject(err)
+                })
+            })
+        },
+        // user Info
+        getUserInfo() {
+            return new Promise((resolve, reject) => {
+                userInfo().then(response => {
+                    const {data} = response
+                    const {name, profile, permissions, roles, menus} = data
+
+
                 }).catch(err => {
                     reject(err)
                 })

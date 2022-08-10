@@ -12,4 +12,8 @@ public class Result {
     public static Results failure(String msg) {
         return new Results(Result.FAILURE, msg, null);
     }
+
+    public static Results expire() {
+        return new Results(Result.TOKEN_EXPIRE, "token过期", null);
+    }
 }

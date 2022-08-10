@@ -23,7 +23,7 @@
         WHERE id = #{id}
     </update>
     <!-- 查询 -->
-    <select id="selectUser" resultType="com.zero.serverApi.bean.entity.system.User">
+    <select id="selectUser" resultType="com.zero.serverApi.bean.entity.system.UserInfo">
         SELECT *
         FROM t_account
         where username = #{userName}

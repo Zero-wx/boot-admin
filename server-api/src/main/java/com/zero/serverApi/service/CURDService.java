@@ -1,14 +1,36 @@
 package com.zero.serverApi.service;
 
-import com.zero.serverApi.bean.entity.system.User;
+import java.util.List;
 
 /**
  * 增删改查service
  */
-public interface CURDService {
+public interface CURDService<T, ID> {
 
-    User findByAccount(String userName);
+    int insert(T record);
 
-    int insert(User record);
+    void delete();
+
+    void update();
+
+    /**
+     * 查询所有
+     *
+     * @return 返回所有结果
+     */
+    List<T> selectAll();
+
+    /**
+     * 根据单个 id 查询
+     *
+     * @param id
+     * @return
+     */
+    List<T> selectById(int id);
+
+
+    List<T> selectAll(String record);
 
 }
+
+

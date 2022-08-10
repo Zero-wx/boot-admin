@@ -1,4 +1,4 @@
-package com.zero.serverApi.contorller.system;
+package com.zero.serverApi.controller.system;
 
 
 import org.springframework.web.bind.annotation.RequestMapping;

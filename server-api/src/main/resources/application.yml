@@ -3,9 +3,6 @@ spring:
     active: dev
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-
-
-
 server:
   port: 8088
   servlet:
@@ -22,6 +19,7 @@ pagehelper:
   reasonable: true
   support-methods-arguments: true
   params: count=countSql
+
 
 jwt:
   token:

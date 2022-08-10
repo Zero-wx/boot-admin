@@ -1,6 +1,7 @@
 package com.zero.serverApi.mapper.system;
 
-import com.zero.serverApi.bean.entity.system.User;
+import com.zero.serverApi.bean.entity.system.Account;
+import com.zero.serverApi.bean.entity.system.UserInfo;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
@@ -11,7 +12,7 @@ public interface UserMapper {
      * @param userName
      * @return
      */
-    User selectUser(String userName);
+    Account selectUser(String userName);
 
     /**
      * 添加记录
@@ -19,5 +20,5 @@ public interface UserMapper {
      * @param record
      * @return
      */
-    int insertUser(User record);
+    int insertUser(UserInfo record);
 }
