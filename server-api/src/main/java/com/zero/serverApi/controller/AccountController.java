@@ -56,6 +56,12 @@ public class AccountController extends BaseController {
         return Result.success("用户创建成功:" + params.getUserName());
     }
 
+    /**
+     * 登录
+     *
+     * @param params userName passWord
+     * @return token
+     */
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public Object login(@RequestBody Account params) {
         try {
@@ -68,15 +74,13 @@ public class AccountController extends BaseController {
                 return Result.failure("用户名或密码不正确");
             }
             String token = accountService.loginForToken(account);
-            Map<String,String> result = new HashMap<>();
-            result.put("token",token);
+            Map<String, String> result = new HashMap<>();
+            result.put("token", token);
             return Result.success(result);
         } catch (Exception e) {
             logger.error(e.getMessage(), e);
         }
         return Result.failure("登录失败");
-
-
     }
 }
 
