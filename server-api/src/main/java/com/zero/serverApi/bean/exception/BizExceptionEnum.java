@@ -8,7 +8,7 @@ public enum BizExceptionEnum implements ServiceExceptionEnum {
     /**
      * 账户问题
      */
-    USER_ALREADY_REG(401, "改用户已经被注册"),
+    USER_ALREADY_REG(401, "该用户已经被注册"),
     USER_NOT_EXISTED(400, "没有此用户");
 
 

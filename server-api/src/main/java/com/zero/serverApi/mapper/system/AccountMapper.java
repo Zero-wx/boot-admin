@@ -2,21 +2,16 @@ package com.zero.serverApi.mapper.system;
 
 import com.zero.serverApi.bean.entity.system.Account;
 
+import com.zero.serverApi.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
 
 @Mapper
-public interface AccountMapper {
+public interface AccountMapper extends BaseMapper {
 
-    Account findByAccount(String userName);
+    Account findByAccount(String account);
 
+    void insertAccount(Account account);
 
-    int insertAccount(Account record);
-
-
-    int insertUserInfo(Account account);
-
-
-    int deleteAccount(Integer id);
-
+    int selectByAccount(String account);
 }

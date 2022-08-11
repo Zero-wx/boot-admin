@@ -1,10 +1,12 @@
 package com.zero.serverApi.service;
 
-import com.zero.serverApi.bean.entity.system.Account;
 
+public abstract class BaseService<T> implements CURDService<T> {
 
-public abstract class BaseService<T,ID> implements CURDService<T,Long>{
+    @Override
+    public T insert(T record) {
+        return null;
+    }
 
-    public abstract Account findByAccount(String record);
 
 }

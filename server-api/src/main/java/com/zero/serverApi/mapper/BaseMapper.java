@@ -1,7 +1,9 @@
 package com.zero.serverApi.mapper;
 
+import org.apache.ibatis.annotations.Mapper;
 
-public interface BaseMapper<T, ID> {
+@Mapper
+public interface BaseMapper {
 
-    T select();
+
 }

@@ -1,0 +1,11 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zero.serverApi.mapper.system.UserInfoMapper">
+    <!-- 新增一条用户详情 -->
+    <insert id="insertUserInfo">
+        insert into t_sys_userinfo(account_id)
+        values (#{account_id})
+    </insert>
+</mapper>

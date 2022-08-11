@@ -16,4 +16,5 @@ public class UserInfo {
     private int roleId;
     private String deptId;
     private int status;
+    private int account_id;
 }
