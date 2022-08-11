@@ -16,6 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 登录
  * 注册
@@ -55,17 +58,24 @@ public class AccountController extends BaseController {
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public Object login(@RequestBody Account params) {
-
-        Account account = accountService.findByAccount(params.getUserName());
-        if (account == null) {
-            return Result.failure("用户名或密码不正确");
+        try {
+            Account account = accountService.findByAccount(params.getUserName());
+            if (account == null) {
+                return Result.failure("用户名或密码不正确");
+            }
+            String passWdMD5 = MD5.md5(params.getPassWord(), account.getSalt());
+            if (!account.getPassWord().equals(passWdMD5)) {
+                return Result.failure("用户名或密码不正确");
+            }
+            String token = accountService.loginForToken(account);
+            Map<String,String> result = new HashMap<>();
+            result.put("token",token);
+            return Result.success(result);
+        } catch (Exception e) {
+            logger.error(e.getMessage(), e);
         }
-        String passWdMD5 = MD5.md5(params.getPassWord(), account.getSalt());
-        if (!account.getPassWord().equals(passWdMD5)) {
-            return Result.failure("用户名或密码不正确");
-        }
+        return Result.failure("登录失败");
 
-        String token = accountService.loginForToken(account);
 
     }
 }
