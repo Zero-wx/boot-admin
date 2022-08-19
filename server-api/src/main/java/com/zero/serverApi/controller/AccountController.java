@@ -6,7 +6,7 @@ import com.zero.serverApi.bean.exception.BizExceptionEnum;
 import com.zero.serverApi.bean.vo.result.Result;
 import com.zero.serverApi.service.system.AccountService;
 import com.zero.serverApi.service.system.UserInfoService;
-import com.zero.serverApi.utils.MD5;
+import com.zero.serverApi.security.MD5;
 import com.zero.serverApi.utils.RandomUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -74,6 +75,7 @@ public class AccountController extends BaseController {
                 return Result.failure("用户名或密码不正确");
             }
             String token = accountService.loginForToken(account);
+
             Map<String, String> result = new HashMap<>();
             result.put("token", token);
             return Result.success(result);
@@ -82,6 +84,17 @@ public class AccountController extends BaseController {
         }
         return Result.failure("登录失败");
     }
+
+    @RequestMapping(value = "/token", method = RequestMethod.GET)
+    public Object token(HttpServletResponse response) {
+
+
+
+
+        return Result.success(null);
+    }
+
+
 }
 
 

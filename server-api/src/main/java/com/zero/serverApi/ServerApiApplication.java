@@ -1,6 +1,6 @@
 package com.zero.serverApi;
 
-import org.mybatis.spring.annotation.MapperScan;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -12,7 +12,7 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 @SpringBootApplication
-//@MapperScan("com.zero.serverApi.mapper")
+
 public class ServerApiApplication {
 
 

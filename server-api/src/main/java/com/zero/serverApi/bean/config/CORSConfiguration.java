@@ -1,4 +1,4 @@
-package com.zero.serverApi.config;
+package com.zero.serverApi.bean.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

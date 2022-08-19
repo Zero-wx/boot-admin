@@ -1,4 +1,4 @@
-package com.zero.serverApi.utils;
+package com.zero.serverApi.security;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

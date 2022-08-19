@@ -4,7 +4,7 @@ package com.zero.serverApi.service.system;
 import com.zero.serverApi.bean.entity.system.Account;
 import com.zero.serverApi.mapper.system.AccountMapper;
 import com.zero.serverApi.service.BaseService;
-import com.zero.serverApi.utils.JWT.JwtUtil;
+import com.zero.serverApi.security.JwtUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
