@@ -10,9 +10,9 @@ public class ApplicationException extends RuntimeException {
      * detail message.  The cause is not initialized, and may subsequently be
      * initialized by a call to {@link #initCause}.
      */
-    public ApplicationException(Integer code, String message) {
-        this.code = code;
-        this.message = message;
+    public ApplicationException(ServiceExceptionEnum serviceExceptionEnum) {
+        this.code = serviceExceptionEnum.getCode();
+        this.message = serviceExceptionEnum.getMessage();
     }
 
 
